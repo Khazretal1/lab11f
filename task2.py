@@ -74,7 +74,6 @@ def delete_from_phonebook(identifier):
             conn.commit()
 
 
-# ==================== 🔽 NEW TASK FUNCTIONS START HERE 🔽 ====================
 
 def search_by_pattern(pattern):
     with connect_db() as conn:
@@ -105,7 +104,7 @@ def insert_or_update_user(name, phone):
 
 def insert_many_users(name_phone_list):
     incorrect_entries = []
-    valid_pattern = r'^\+?[0-9\- ()]{7,15}$'  # updated to be a bit more flexible
+    valid_pattern = r'^\+?[0-9\- ()]{7,15}$'  
 
     with connect_db() as conn:
         with conn.cursor() as cur:
